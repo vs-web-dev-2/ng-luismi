@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PieComponent } from './pie/pie.component';
+import { CabeceraComponent } from './cabecera/cabecera.component';
+import { TecleoModule } from './tecleo/tecleo.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PieComponent
+    PieComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TecleoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

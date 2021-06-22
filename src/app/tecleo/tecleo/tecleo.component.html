@@ -1,0 +1,9 @@
+<main>
+    <cite>{{ frase }}</cite>
+    <p>{{ mensaje }}</p>
+    <form>
+        <input [(ngModel)]="loTecleado" name="loTecleado" [disabled]="inputDeshabilitado" [class]="inputClass"
+            [type]="inputType" (input)="onInput()">
+        <button type="button" (click)="empezar()">Empezar</button>
+    </form>
+</main>>
