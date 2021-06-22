@@ -27,6 +27,7 @@ export class TecleoComponent implements OnInit {
     this.mensaje = "Ánimo";
     this.inputDeshabilitado = false;
     this.inputClass = '';
+    this.haTerminado = false;
   }
 
   public onInput() {
