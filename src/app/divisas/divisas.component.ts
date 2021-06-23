@@ -13,9 +13,13 @@ export class DivisasComponent implements OnInit {
   public cotizaciones: any[] = [];
   public cargado = false;
 
-  constructor(frank: FrankfurterService) {
+  constructor(private frank: FrankfurterService) {
+
+  }
+
+  ngOnInit(): void {
     const url = "https://api.frankfurter.app/latest";
-    frank.obtenerCotizaciones$().subscribe(
+    this.frank.obtenerCotizaciones$().subscribe(
       {
         next: (body: any) => {
           console.log("respuesta obtenida" + JSON.stringify(body))
@@ -34,9 +38,6 @@ export class DivisasComponent implements OnInit {
       }
     );
     console.log("Llamada establecida a " + url);
-  }
-
-  ngOnInit(): void {
   }
 
 }
