@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FrankfurterService } from './frankfurter.service';
 
 @Component({
   selector: 'app-divisas',
@@ -12,9 +13,9 @@ export class DivisasComponent implements OnInit {
   public cotizaciones: any[] = [];
   public cargado = false;
 
-  constructor(http: HttpClient) {
+  constructor(frank: FrankfurterService) {
     const url = "https://api.frankfurter.app/latest";
-    http.get(url).subscribe(
+    frank.obtenerCotizaciones$().subscribe(
       {
         next: (body: any) => {
           console.log("respuesta obtenida" + JSON.stringify(body))
